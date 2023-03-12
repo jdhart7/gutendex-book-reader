@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'Roboto Medium';
+	src: url('http://dehart.dev/images/Roboto/Roboto-Medium.ttf');
+}
+* {
+    font-family: 'Roboto Medium', 'Times New Roman';
+}
