@@ -1,16 +1,17 @@
 import React from 'react';
 import { Loading } from '../loading/Loading.js';
+import { SearchBooks } from './searchBooks/SearchBooks.js';
 import './bookSelect.css';
 
 export class BookSelect extends React.Component {
     render() {
-        let {bookList, numberOfBooks, pageNumber, changePage} = this.props;
+        let {bookList, numberOfBooks, pageNumber, changePage, onSearch} = this.props;
         let numberOfPages = parseInt(numberOfBooks / 32);
         numberOfPages = numberOfBooks % 32 > 0 ? numberOfPages + 1 : numberOfPages;
 
         return (
             <div className="container">
-                <input className="inputStyle bookSearchInput" placeholder="Search Books" />
+                <SearchBooks onSearch={onSearch} />
                 <div className="bookListContainer">
                     { bookList ? '' : <Loading /> }
                     <ul className="bookList">
@@ -22,7 +23,6 @@ export class BookSelect extends React.Component {
                     <div key={pageNumber}>
                         Page {pageNumber} of {numberOfPages}
                     </div>
-                    {console.log('pageNumber in render: ' + pageNumber)}
                     <button className="button" onClick={changePage} id="NEXT" disabled={pageNumber >= numberOfPages ? true : false}>NEXT</button>
                 </div>
             </div>
