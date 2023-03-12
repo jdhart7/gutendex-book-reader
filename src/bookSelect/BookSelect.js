@@ -18,7 +18,7 @@ export class BookSelect extends React.Component {
                     </ul>
                 </div>
                 <div className="buttonContainer">
-                    <button className="button" onClick={changePage} id="PREV" disabled={pageNumber === 1}>PREV</button>
+                    <button className="button" onClick={changePage} id="PREV" disabled={pageNumber === 1 || !bookList}>PREV</button>
                     <div key={pageNumber}>
                         Page {pageNumber} of {numberOfPages}
                     </div>
