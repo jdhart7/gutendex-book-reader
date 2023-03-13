@@ -5,7 +5,7 @@ import './bookSelect.css';
 
 export class BookSelect extends React.Component {
     render() {
-        let {bookList, numberOfBooks, pageNumber, changePage, onSearch} = this.props;
+        let {bookList, numberOfBooks, pageNumber, changePage, onSearch, setBookId} = this.props;
         let numberOfPages = parseInt(numberOfBooks / 32);
         numberOfPages = numberOfBooks % 32 > 0 ? numberOfPages + 1 : numberOfPages;
 

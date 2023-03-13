@@ -11,3 +11,16 @@
   background-color: #dadad3;
   padding: 5px;
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.BookReaderContainer {
+
+}

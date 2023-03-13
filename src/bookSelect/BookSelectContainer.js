@@ -8,6 +8,7 @@ export class BookSelectContainer extends React.Component {
 
         this.changePage = this.changePage.bind(this);
         this.onSearch = this.onSearch.bind(this);
+        this.setBookId = this.setBookId.bind(this);
     }
 
     componentDidMount() {
@@ -41,7 +42,7 @@ export class BookSelectContainer extends React.Component {
             }
 
             return (
-                <div key={book.id} className="bookListItem" title={book.title}>
+                <div key={book.id} id={book.id} className="bookListItem" title={book.title} onClick={this.setBookId}>
                     <div className="title">{editedTitle ? editedTitle : book.title}</div>
                     <div className="author">{editedAuthor ? editedAuthor : book.authors[0].name}</div>
                 </div>
@@ -79,7 +80,7 @@ export class BookSelectContainer extends React.Component {
             }
 
             return (
-                <div key={book.id} className="bookListItem" title={book.title}>
+                <div key={book.id} id={book.id} className="bookListItem" title={book.title} onClick={this.setBookId}>
                     <div className="title">{editedTitle ? editedTitle : book.title}</div>
                     <div className="author">{editedAuthor ? editedAuthor : book.authors[0].name}</div>
                 </div>
@@ -93,6 +94,10 @@ export class BookSelectContainer extends React.Component {
                 numberOfBooks: myResponse.count,
             }
         });
+    }
+
+    setBookId(e) {
+        this.props.setBookId(e.target.id);
     }
 
     changePage(e) {
