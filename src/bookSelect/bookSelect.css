@@ -1,0 +1,104 @@
+.container {
+    width: 20vw;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.bookSearchInput {
+    width: 70%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bookListContainer {
+    height: 90%;
+    min-height: 90%;
+    max-height: 80%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.bookList {
+    list-style-type: inside;
+    padding: 0px;
+}
+
+.bookListItem {
+    height: 60px;
+    list-style-type: none;
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgba(29, 30, 28, 0.26);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.bookListItem:hover {
+    background-color: #dadad3;
+}
+
+.author {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px;
+    font-size: 12px;
+    width: fit-content;
+    border-radius: 3px;
+    margin: 0px 0px 1px 2px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title {
+    margin: 0px 0px 0px 2px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin: 5px;
+    width: 61px;
+    height: 30px;
+    background-color: #dadad3;
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 0px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.button:active {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #dadad3;
+    border: #dadad3;
+    border: 2px solid #dadad3;
+}
+.button:disabled {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #dadad3;
+    border: #dadad3;
+    border: 2px solid #dadad3;
+    cursor: default;
+}
