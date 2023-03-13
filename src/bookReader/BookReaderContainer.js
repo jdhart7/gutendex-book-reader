@@ -17,19 +17,11 @@ export class BookReaderContainer extends React.Component {
 
     async getBookInformation() {
         this.resetLink();
-        const getBookInfo = await fetch('https://gutendex.com/books/' + this.props.bookId, {
-            method: 'GET'
-        });
-        const myResponse = await getBookInfo.json();
-        let jsonString = JSON.stringify(myResponse);
-        jsonString = jsonString.split('text/html');
-        jsonString = jsonString[1].split('"');
-        let temp = jsonString[2];
-        console.log('temp: ' + temp);
+
         this.setState(prevState => {
             return {
                 ...prevState,
-                bookLink: temp,
+                bookLink: `https://gutenberg.org/files/${this.props.bookId}/${this.props.bookId}-h/${this.props.bookId}-h.htm`,
             }
         });
     }
