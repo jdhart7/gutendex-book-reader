@@ -33,6 +33,7 @@
 .bookList {
     list-style-type: inside;
     padding: 0px;
+    margin: 0px;
 }
 
 .bookListItem {
