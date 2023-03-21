@@ -4,7 +4,12 @@ import { BookSelect } from './BookSelect.js';
 export class BookSelectContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pageNumber: 1, bookList: '', numberOfBooks: 0, searchTerm: '' };
+        this.state = {
+            pageNumber: 1, 
+            bookList: '', 
+            numberOfBooks: 0, 
+            searchTerm: '',
+        };
 
         this.changePage = this.changePage.bind(this);
         this.onSearch = this.onSearch.bind(this);

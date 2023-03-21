@@ -7,14 +7,17 @@ export class BookReader extends React.Component {
         const bookId = this.props.bookId;
         const bookLink = this.props.bookLink;
         const bookTitle = this.props.bookTitle;
-        const listOpen = this.props.listOpen;
+        const listState = this.props.listState;
         const toggleList = this.props.toggleList;
 
         return (
             <div className="bookReaderContainer">
                 <div className="bookHeader">
-                    <div className="icon" onClick={toggleList}>
-                        <img src={listOpen ? '../../icons/openBook.png' : '../../icons/closedBook.png'} className="iconImage" />
+                    <div className="icon" onClick={toggleList} title={listState ? 'Close book list menu' : 'Open book list menu'}>
+                        <img src={listState ? '../../icons/openBook.png' : '../../icons/closedBook.png'} 
+                            className="iconImage" 
+                            alt="toggle book list menu" 
+                        />
                     </div>
                     <div className="readerHeaderMarkers">
                         <span className="headerLines" />
@@ -34,7 +37,7 @@ export class BookReader extends React.Component {
                         <span className="headerLines" />
                     </div>
                     <div className="icon">
-                        <img src="../../icons/lightOff.png" className="iconImage" />
+                        <img src="../../icons/lightOff.png" className="iconImage" alt="toggle info menu" />
                     </div>
                 </div>
                 {!bookId && !bookLink ? <div className="selectBookBackground"><div className="selectBookModal"><p>Please Select a Book to Begin.</p></div></div> : ''}
