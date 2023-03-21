@@ -6,12 +6,13 @@ import { BookReaderContainer } from './bookReader/BookReaderContainer.js';
 export class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { bookId: '' };
+
+        this.state = { bookId: '', listState: true, };
         this.setBookId = this.setBookId.bind(this);
+        this.toggleList = this.toggleList.bind(this);
     }
 
-    setBookId(bookId) {
-        console.log('in app: ' + bookId);
+    setBookId(bookId, bookTitle) {
         this.setState((prevState) => {
             return {
                 ...prevState,
@@ -20,15 +21,26 @@ export class App extends React.Component {
         })
     }
 
+    toggleList(listState) {
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                listState: listState,
+            }
+        });
+    }
+
     render() {
         const bookId = this.state.bookId;
+        const bookTitle = this.state.bookTitle;
+        const listState = this.state.listState;
         const setBookId = this.setBookId;
+        const toggleList = this.toggleList;
 
         return (
             <div className='main'>
-                <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} />
-                {console.log('in app renderer: ' + bookId)}
-                <BookReaderContainer className="BookReaderContainer" bookId={bookId} />
+                <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} listState={listState} />
+                <BookReaderContainer className="BookReaderContainer" bookId={bookId} bookTitle={bookTitle} toggleList={toggleList} />
             </div>
         )
     }

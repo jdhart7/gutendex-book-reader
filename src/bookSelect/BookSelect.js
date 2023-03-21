@@ -5,12 +5,25 @@ import './bookSelect.css';
 
 export class BookSelect extends React.Component {
     render() {
-        let {bookList, numberOfBooks, pageNumber, changePage, onSearch, setBookId} = this.props;
+        let {bookList, numberOfBooks, pageNumber, changePage, onSearch, setBookId, listState} = this.props;
         let numberOfPages = parseInt(numberOfBooks / 32);
         numberOfPages = numberOfBooks % 32 > 0 ? numberOfPages + 1 : numberOfPages;
 
         return (
-            <div className="container">
+            <div className={listState}>
+                <div className="listHeader">
+                    <div className="headerMarkers">
+                        <span className="headerLines" />
+                        <span className="headerLines" />
+                        <span className="headerLines" />
+                    </div>
+                    <div>Books</div>
+                    <div className="headerMarkers">
+                        <span className="headerLines" />
+                        <span className="headerLines" />
+                        <span className="headerLines" />
+                    </div>
+                </div>
                 <SearchBooks onSearch={onSearch} />
                 <div className="bookListContainer">
                     { bookList ? '' : <Loading /> }

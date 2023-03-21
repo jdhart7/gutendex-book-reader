@@ -4,7 +4,13 @@ import { BookSelect } from './BookSelect.js';
 export class BookSelectContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pageNumber: 1, bookList: '', numberOfBooks: 0, searchTerm: '' };
+        this.state = {
+            pageNumber: 1, 
+            bookList: '', 
+            numberOfBooks: 0, 
+            searchTerm: '',
+            listState: true,
+        };
 
         this.changePage = this.changePage.bind(this);
         this.onSearch = this.onSearch.bind(this);
@@ -137,6 +143,7 @@ export class BookSelectContainer extends React.Component {
         const bookList = this.state.bookList;
         const numberOfBooks = this.state.numberOfBooks;
         const pageNumber = this.state.pageNumber;
+        const listState = this.props.listState;
         const changePage = this.changePage;
         const onSearch = this.onSearch;
 
@@ -147,6 +154,7 @@ export class BookSelectContainer extends React.Component {
                 pageNumber={pageNumber} 
                 changePage={changePage}
                 onSearch={onSearch}
+                listState={listState ? 'bookSelectContainer' : 'bookSelectContainer closedBookList'}
             />
         );
     }
