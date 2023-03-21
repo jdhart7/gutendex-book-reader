@@ -17,6 +17,7 @@ export class App extends React.Component {
             return {
                 ...prevState,
                 bookId: bookId,
+                bookTitle: bookTitle,
             }
         })
     }
