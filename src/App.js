@@ -10,25 +10,28 @@ export class App extends React.Component {
         this.setBookId = this.setBookId.bind(this);
     }
 
-    setBookId(bookId) {
+    setBookId(bookId, bookTitle) {
         console.log('in app: ' + bookId);
+        console.log('in app: ' + bookTitle)
         this.setState((prevState) => {
             return {
                 ...prevState,
                 bookId: bookId,
+                bookTitle: bookTitle,
             }
         })
     }
 
     render() {
         const bookId = this.state.bookId;
+        const bookTitle = this.state.bookTitle;
         const setBookId = this.setBookId;
 
         return (
             <div className='main'>
                 <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} />
                 {console.log('in app renderer: ' + bookId)}
-                <BookReaderContainer className="BookReaderContainer" bookId={bookId} />
+                <BookReaderContainer className="BookReaderContainer" bookId={bookId} bookTitle={bookTitle} />
             </div>
         )
     }
