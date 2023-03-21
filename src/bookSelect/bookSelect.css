@@ -39,7 +39,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
-    box-shadow: inset 0px 2px 3px -2px black;
 }
 
 .bookSearchInput {
@@ -51,11 +50,10 @@
 
 .bookListContainer {
     height: 90%;
-    min-height: 83%;
+    min-height: 90%;
     max-height: 80%;
     overflow-x: hidden;
     overflow-y: scroll;
-    box-shadow: 0px 1px 4px -2px black;
 }
 
 .bookList {
@@ -69,7 +67,7 @@
     list-style-type: none;
     width: 100%;
     border: 1px solid black;
-    background-color: rgb(225, 225, 225);
+    background-color: rgba(29, 30, 28, 0.26);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,7 +121,6 @@
     color: #dadad3;
     border: #dadad3;
     border: 2px solid #dadad3;
-    box-shadow: inset 2px 2px 3px -1px black;
 }
 .button:disabled {
     background-color: rgba(0, 0, 0, 0.6);

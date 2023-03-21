@@ -103,7 +103,7 @@ export class BookSelectContainer extends React.Component {
     }
 
     setBookId(e) {
-        this.props.setBookId(e.target.id, e.target.title);
+        this.props.setBookId(e.target.id);
     }
 
     changePage(e) {
