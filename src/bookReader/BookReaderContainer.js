@@ -6,7 +6,6 @@ export class BookReaderContainer extends React.Component {
         super(props);
         this.state = {
             bookLink: '',
-            bookTitle: '',
             listOpen: true,
         };
 
@@ -35,7 +34,6 @@ export class BookReaderContainer extends React.Component {
             return {
                 ...prevState,
                 bookLink: temp,
-                bookTitle: myResponse.title,
             }
         });
     }
@@ -63,7 +61,7 @@ export class BookReaderContainer extends React.Component {
     render() {
         const { bookId } = this.props;
         const bookLink = this.state.bookLink;
-        const bookTitle = this.state.bookTitle;
+        const bookTitle = this.props.bookTitle;
         const listOpen = this.state.listOpen;
         const toggleList = this.toggleList;
 
