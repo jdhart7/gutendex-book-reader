@@ -11,19 +11,6 @@ export class BookSelect extends React.Component {
 
         return (
             <div className="container">
-                <div className="listHeader">
-                    <div className="headerMarkers">
-                        <span className="headerLines" />
-                        <span className="headerLines" />
-                        <span className="headerLines" />
-                    </div>
-                    <div>Books</div>
-                    <div className="headerMarkers">
-                        <span className="headerLines" />
-                        <span className="headerLines" />
-                        <span className="headerLines" />
-                    </div>
-                </div>
                 <SearchBooks onSearch={onSearch} />
                 <div className="bookListContainer">
                     { bookList ? '' : <Loading /> }

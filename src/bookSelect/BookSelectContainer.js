@@ -12,13 +12,13 @@ export class BookSelectContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.getAllBooksTemp();
-        //this.getAllBooks()
+        //this.getAllBooksTemp();
+        this.getAllBooks()
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.pageNumber !== this.state.pageNumber || prevState.searchTerm !== this.state.searchTerm) {
-            this.getAllBooksTemp();
-            //this.getAllBooks();
+            //this.getAllBooksTemp();
+            this.getAllBooks();
         }
     }
 
@@ -97,7 +97,7 @@ export class BookSelectContainer extends React.Component {
     }
 
     setBookId(e) {
-        this.props.setBookId(e.target.id, e.target.title);
+        this.props.setBookId(e.target.id);
     }
 
     changePage(e) {
