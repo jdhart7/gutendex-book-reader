@@ -24,7 +24,7 @@ export class BookReader extends React.Component {
                         <span className="headerLines" />
                     </div>
                     <div className="bookTitle">
-                        {bookTitle ? bookTitle : 'Select a book'}
+                        {bookTitle ? (bookTitle.length > 46 ? bookTitle.substring(0, 46) + "..." : bookTitle) : 'Select a book'}
                     </div>
                     <div className="readerHeaderMarkers">
                         <span className="headerLines" />
