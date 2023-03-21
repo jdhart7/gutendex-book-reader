@@ -5,8 +5,12 @@ export class BookReaderContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookLink: ''
+            bookLink: '',
+            bookTitle: '',
+            listOpen: true,
         };
+
+        this.toggleList = this.toggleList.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -26,10 +30,12 @@ export class BookReaderContainer extends React.Component {
         jsonString = jsonString[1].split('"');
         let temp = jsonString[2];
         console.log('temp: ' + temp);
+        console.log(myResponse.title);
         this.setState(prevState => {
             return {
                 ...prevState,
                 bookLink: temp,
+                bookTitle: myResponse.title,
             }
         });
     }
@@ -39,17 +45,37 @@ export class BookReaderContainer extends React.Component {
             return {
                 ...prevState,
                 bookLink: '',
+                bookTitle: '',
             }
         });
+    }
+
+    toggleList() {
+        console.log('listOpen: ' + this.state.listOpen);
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                listOpen: this.state.listOpen ? false : true,
+            }
+        })
     }
 
     render() {
         const { bookId } = this.props;
         const bookLink = this.state.bookLink;
+        const bookTitle = this.state.bookTitle;
+        const listOpen = this.state.listOpen;
+        const toggleList = this.toggleList;
 
         return (
             <div>
-                <BookReader bookId={bookId} bookLink={bookLink} />
+                <BookReader 
+                    bookId={bookId} 
+                    bookLink={bookLink} 
+                    bookTitle={bookTitle} 
+                    listOpen={listOpen}
+                    toggleList={toggleList} 
+                />
             </div>
         )
     };
