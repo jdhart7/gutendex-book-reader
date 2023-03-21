@@ -8,6 +8,8 @@ export class BookReaderContainer extends React.Component {
             bookLink: '',
             listState: true,
         };
+
+        this.toggleList = this.toggleList.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -32,6 +34,7 @@ export class BookReaderContainer extends React.Component {
             return {
                 ...prevState,
                 bookLink: '',
+                bookTitle: '',
             }
         });
     }

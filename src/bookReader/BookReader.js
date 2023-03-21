@@ -42,8 +42,6 @@ export class BookReader extends React.Component {
                 </div>
                 {!bookId && !bookLink ? <div className="selectBookBackground"><div className="selectBookModal"><p>Please Select a Book to Begin.</p></div></div> : ''}
                 {bookId && !bookLink ? <Loading /> : ''}
-                {console.log('bookLink below:')}
-                {bookLink ? console.log(bookLink) : ''}
                 {bookId && bookLink ? <iframe src={bookLink} width="100%" height="100%" /> : ''}
             </div>
         );
