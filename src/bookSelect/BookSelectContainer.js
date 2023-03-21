@@ -9,6 +9,7 @@ export class BookSelectContainer extends React.Component {
             bookList: '', 
             numberOfBooks: 0, 
             searchTerm: '',
+            listState: true,
         };
 
         this.changePage = this.changePage.bind(this);
@@ -17,13 +18,13 @@ export class BookSelectContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.getAllBooksTemp();
-        //this.getAllBooks()
+        //this.getAllBooksTemp();
+        this.getAllBooks()
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.pageNumber !== this.state.pageNumber || prevState.searchTerm !== this.state.searchTerm) {
-            this.getAllBooksTemp();
-            //this.getAllBooks();
+            //this.getAllBooksTemp();
+            this.getAllBooks();
         }
     }
 
@@ -142,6 +143,7 @@ export class BookSelectContainer extends React.Component {
         const bookList = this.state.bookList;
         const numberOfBooks = this.state.numberOfBooks;
         const pageNumber = this.state.pageNumber;
+        const listState = this.props.listState;
         const changePage = this.changePage;
         const onSearch = this.onSearch;
 
@@ -152,6 +154,7 @@ export class BookSelectContainer extends React.Component {
                 pageNumber={pageNumber} 
                 changePage={changePage}
                 onSearch={onSearch}
+                listState={listState ? 'bookSelectContainer' : 'bookSelectContainer closedBookList'}
             />
         );
     }

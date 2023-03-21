@@ -7,7 +7,7 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { bookId: '', listState: true };
+        this.state = { bookId: '', listState: true, };
         this.setBookId = this.setBookId.bind(this);
         this.toggleList = this.toggleList.bind(this);
     }
@@ -40,7 +40,7 @@ export class App extends React.Component {
 
         return (
             <div className='main'>
-                {listState ? <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} /> : ''}
+                <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} listState={listState} />
                 <BookReaderContainer className="BookReaderContainer" bookId={bookId} bookTitle={bookTitle} toggleList={toggleList} />
             </div>
         )
