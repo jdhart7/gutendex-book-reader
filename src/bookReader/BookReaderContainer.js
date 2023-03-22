@@ -7,9 +7,11 @@ export class BookReaderContainer extends React.Component {
         this.state = {
             bookLink: '',
             listState: true,
+            infoState: false,
         };
 
         this.toggleList = this.toggleList.bind(this);
+        this.toggleInfo = this.toggleInfo.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -49,11 +51,23 @@ export class BookReaderContainer extends React.Component {
         });
     }
 
+    toggleInfo() {
+        this.props.toggleInfo(this.state.infoState ? false : true);
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                infoState: this.state.infoState ? false : true,
+            }
+        });
+    }
+
     render() {
         const { bookId } = this.props;
-        const bookLink = this.state.bookLink;
         const bookTitle = this.props.bookTitle;
+        const bookLink = this.state.bookLink;
         const listState = this.state.listState;
+        const infoState = this.state.infoState;
+        const toggleInfo = this.toggleInfo;
         const toggleList = this.toggleList;
 
         return (
@@ -62,7 +76,9 @@ export class BookReaderContainer extends React.Component {
                     bookLink={bookLink} 
                     bookTitle={bookTitle} 
                     listState={listState}
+                    infoState={infoState} 
                     toggleList={toggleList} 
+                    toggleInfo={toggleInfo}
                 />
         )
     };

@@ -1,0 +1,13 @@
+.infoMenuContainer {
+    width: 20vw;
+    min-width: 250px;
+    height: 100vh;
+    background-color: white;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.closedInfoList {
+    display: none;
+}
