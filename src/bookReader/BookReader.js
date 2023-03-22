@@ -1,5 +1,8 @@
 import React from 'react';
 import { Loading } from '../loading/Loading.js';
+import openBookIcon from '../icons/openBook.png';
+import closedBookIcon from '../icons/closedBook.png';
+import offLightBulbIcon from '../icons/lightOff.png';
 import './bookReader.css';
 
 export class BookReader extends React.Component {
@@ -14,7 +17,7 @@ export class BookReader extends React.Component {
             <div className="bookReaderContainer">
                 <div className="bookHeader">
                     <div className="icon" onClick={toggleList} title={listState ? 'Close book list menu' : 'Open book list menu'}>
-                        <img src={listState ? '../../icons/openBook.png' : '../../icons/closedBook.png'} 
+                        <img src={listState ? openBookIcon : closedBookIcon} 
                             className="iconImage" 
                             alt="toggle book list menu" 
                         />
@@ -37,7 +40,7 @@ export class BookReader extends React.Component {
                         <span className="headerLines" />
                     </div>
                     <div className="icon">
-                        <img src="../../icons/lightOff.png" className="iconImage" alt="toggle info menu" />
+                        <img src={offLightBulbIcon} className="iconImage" alt="toggle info menu" />
                     </div>
                 </div>
                 {!bookId && !bookLink ? <div className="selectBookBackground"><div className="selectBookModal"><p>Please Select a Book to Begin.</p></div></div> : ''}
