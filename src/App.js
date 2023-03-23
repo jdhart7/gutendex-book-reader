@@ -59,7 +59,7 @@ export class App extends React.Component {
             <div className='main'>
                 <BookSelectContainer className="BookSelectContainer" setBookId={setBookId} listState={listState} />
                 <BookReaderContainer className="BookReaderContainer" bookId={bookId} bookTitle={bookTitle} toggleList={toggleList} toggleInfo={toggleInfo} />
-                <InfoMenuContainer infoState={infoState} />
+                <InfoMenuContainer infoState={infoState} bookId={bookId} />
             </div>
         )
     }
