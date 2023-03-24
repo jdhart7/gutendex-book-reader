@@ -1,3 +1,8 @@
+a {
+    font-style: italic;
+    color: #5a5a5a;
+}
+
 .infoMenuContainer {
     width: 20vw;
     min-width: 250px;
@@ -62,4 +67,18 @@
 .information {
     margin: 8px;
     overflow-y: auto;
+}
+
+.headerHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.infoIcons {
+    width: 44px;
+    height: 44px;
+    padding-right: 8px;
+    image-rendering: pixelated;
 }

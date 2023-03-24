@@ -1,5 +1,12 @@
 import React from 'react';
 import { Loading } from '../loading/Loading.js';
+import openBookIcon from '../icons/openBook.png';
+import closedBookIcon from '../icons/closedBook.png';
+import saveIcon from '../icons/saveIcon.png';
+import computerIcon from '../icons/computerIcon.png';
+import authorIcon from '../icons/printerIcon.png';
+import copyrightIcon from '../icons/copyrightIcon.png';
+import languageIcon from '../icons/languageIcon.png';
 import './infoMenu.css';
 
 export class InfoMenu extends React.Component {
@@ -15,7 +22,7 @@ export class InfoMenu extends React.Component {
         if (formats) {
             console.log(formats);
             for (let i = 0; i < formats.length; i += 2) {
-                formattedLinks.push(<p>{formats[i]}: <a href={formats[i + 1]}>{formats[i + 1]}</a></p>);
+                formattedLinks.push(<p>{formats[i]}: <a href={formats[i + 1]} target="_blank" rel="noopener noreferrer">{formats[i + 1]}</a></p>);
             }
         }
         
@@ -38,12 +45,34 @@ export class InfoMenu extends React.Component {
                 {bookId && !bookInfo ? <Loading /> : ''}
                 {bookId && bookInfo ? (
                         <div className="information">
-                            <h3>{bookTitle}</h3>
-                            <h5>{' by ' + authors}</h5>
-                            <p>Bookshelves: <br />{bookShelves}</p>
-                            <p>{downloadCount == '1' ? 'Downloaded ' + downloadCount + ' Time' : 'Downloaded ' + downloadCount + ' Times'}</p>
-                            <p>Copyright: {copyright}</p>
-                            <p>Languages: {languages}</p>
+                            <div className="headerHolder">
+                                <img src={openBookIcon} className="infoIcons" alt='' />
+                                <h3>{bookTitle}</h3>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={authorIcon} className="infoIcons" alt='' />
+                                <h5>{' by ' + authors}</h5>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={closedBookIcon} className="infoIcons" alt='' />
+                                <p>Bookshelves: <br />{bookShelves}</p>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={saveIcon} className="infoIcons" alt='' />
+                                <p>{downloadCount == '1' ? 'Downloaded ' + downloadCount + ' Time' : 'Downloaded ' + downloadCount + ' Times'}</p>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={copyrightIcon} className="infoIcons" alt='' />
+                                <p>Copyright: {copyright}</p>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={languageIcon} className="infoIcons" alt='' />
+                                <p>Languages: {languages}</p>
+                            </div>
+                            <div className="headerHolder">
+                                <img src={computerIcon} className="infoIcons" alt='' />
+                                <p>Download Links:</p>
+                            </div>
                             {formattedLinks}
                         </div>
                     ) : ''}
