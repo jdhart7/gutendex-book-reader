@@ -64,3 +64,7 @@
 .iconImage {
     image-rendering: pixelated;
 }
+
+.iframe {
+    background-color: #faebd0;
+}
