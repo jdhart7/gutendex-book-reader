@@ -1,7 +1,7 @@
 import React from 'react';
 import { Loading } from '../loading/Loading.js';
 import openBookIcon from '../icons/openBook.png';
-import closedBookIcon from '../icons/closedBook.png';
+import bookshelfIcon from '../icons/bookshelfIcon.png';
 import saveIcon from '../icons/saveIcon.png';
 import computerIcon from '../icons/computerIcon.png';
 import authorIcon from '../icons/printerIcon.png';
@@ -54,7 +54,7 @@ export class InfoMenu extends React.Component {
                                 <h5>{' by ' + authors}</h5>
                             </div>
                             <div className="headerHolder">
-                                <img src={closedBookIcon} className="infoIcons" alt='' />
+                                <img src={bookshelfIcon} className="infoIcons" alt='' />
                                 <p>Bookshelves: <br />{bookShelves}</p>
                             </div>
                             <div className="headerHolder">
