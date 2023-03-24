@@ -1,20 +1,20 @@
 Style Changes:
-    - Add a header above the search books component
-    - Add a header above the book browser
-        * Has book name/title
+    - ~~Add a header above the search books component~~
+    - ~~Add a header above the book browser~~
+        * ~~Has book name/title~~
     - Alternate colors on list items?
 
 Functional Changes:
-    - Add mobile compatability
-        * Make book list on left fold in below certain vw
-        * Add hamburger menu to header
-        * Book list expands on click
-    - Add info panel
-        * Info icon at top left
-        * Expand menu on click
-        * Menu shows book information, download links, etc.
+    - ~~Add mobile compatability~~
+        * ~~Make book list on left fold in below certain vw~~
+        * ~~Add hamburger menu to header~~
+        * ~~Book list expands on click~~
+    - ~~Add info panel~~
+        * ~~Info icon at top left~~
+        * ~~Expand menu on click~~
+        * ~~Menu shows book information, download links, etc.~~
         * Accordion?
-        * Figure out a way around the scroll bar issue
+        * ~~Figure out a way around the scroll bar issue~~
     - Put book ID/search terms in URL so users can link to a book/search
         * Generalize function...
     - Exit loading screen on iframe when the iframe has loaded, rather than when the book link is retrieved
