@@ -1,70 +1,10 @@
-# Getting Started with Create React App
+# Gutenberg Library Browser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project runs off of the [Project Gutenberg](https://www.gutenberg.org/) website and the [Gutendex](https://gutendex.com/) API. The purpose of this project is to give users a way to browse the Gutenberg project quickly and efficiently, read the books located on the website, download the book in any available format, retrieve information about the book, etc., all on the same page with minimal clicks. The app was created using React.
 
-## Available Scripts
+## How to use
+The user experience starts with a prompt to select a book from the Book List on the left. The Book List can be shown or hidden at any time by clicking the book icon in the top left of the header. To search for a book, you can enter a term in the "Search Books" bar and either 1) click the "SEARCH" button, or 2) press the enter key. The list will then be updated with books matching the search term. If the book isn't immediately visable on the curent page, the user can click the "NEXT" or "PREV" buttons at the bottom of the Book List component.
 
-In the project directory, you can run:
+Once the desired book is found and clicked, the book will be displayed in the Book Reader component, found in the middle of the screen. If the user would like to hide the book list at this point for easier reading, they can click on the Open Book Icon in the top-left of the Book Reader header. Once hidden, the list can be toggled at any point by clicking the icon again.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once a book is selected, the user can view information about the book by clicking the Light Bulb Icon in the top-right of the Book Reader's header. Doing so will open the Information Panel, showing things such as: the title of the book, the authors of the book (along with the birth/death date of the author), bookshelves the book belongs to (these are like categories to the Gutenberg Project), the amount of times the book has been downloaded, the copyright status of the book, the languages available, and some download links for the book. Clicking one of the links will open a new tab. The Information Panel can be closed at any point by clicking the light bulb icon again.
